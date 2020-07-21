@@ -13,7 +13,7 @@ export default class NewGuestForm extends React.Component{
     state = {
         name: '',
         age: '',
-        risk: 0,
+        risk: '',
         status: false,
         image: ''  
     }

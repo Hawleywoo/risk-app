@@ -18,19 +18,34 @@ export default class GuestContainter extends React.Component{
     addGuest = (newGuest) => 
     { this.setState({ guests: [...this.state.guests, {...newGuest}]})  }
 
-    render(){
 
+    changeStatus = (guestName) => {
+
+        const newGuest = this.state.guests.map(guest => {
+            
+            if(guest.name === guestName.name){
+                guest.status = !guest.status
+            }
+            return guest
+        })
+        this.setState({
+            guests: newGuest
+        })
+    }
+
+    render(){
+        console.log(this.state)
     const guestList = this.state.guests.map( guest => {
-        return <GuestCard key={guest.id} guest={guest} />
+        return <GuestCard key={guest.id} guest={guest} changeStatus={this.changeStatus}/>
     } )
 
         return(
             <>
             <header className='header'>
                 <h1>Risk App</h1>
+                <NewGuestForm addGuest={this.addGuest} />
             </header>
 
-                <NewGuestForm addGuest={this.addGuest} />
             <div className='guest-container'>
                 
                 {guestList}
