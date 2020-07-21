@@ -9,7 +9,7 @@ export default class GuestContainter extends React.Component{
     }
 
     componentDidMount(){
-        fetch('http://localhost:4000/guests')
+        fetch('http://localhost:3000/guests')
             .then(response => response.json())
             .then(guests => this.setState({guests: guests}))
     }
@@ -21,9 +21,13 @@ export default class GuestContainter extends React.Component{
     } )
 
         return(
+            <>
+            <h1>Risk App</h1>
             <div className='guest-container'>
+                
                 {guestList}
             </div>
+            </>
         )
     }
 }
