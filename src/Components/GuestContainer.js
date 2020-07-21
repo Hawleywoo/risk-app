@@ -42,7 +42,7 @@ export default class GuestContainter extends React.Component{
         return(
             <>
             <header className='header'>
-                <h1>Risk App</h1>
+                <h1>Risky Bizzzness</h1>
                 <NewGuestForm addGuest={this.addGuest} />
             </header>
 
