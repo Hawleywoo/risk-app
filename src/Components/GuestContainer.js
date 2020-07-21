@@ -1,5 +1,6 @@
 import React from 'react'
 import GuestCard from './GuestCard'
+import NewGuestForm from './NewGuestForm'
 
 
 export default class GuestContainter extends React.Component{
@@ -14,6 +15,9 @@ export default class GuestContainter extends React.Component{
             .then(guests => this.setState({guests: guests}))
     }
 
+    addGuest = (newGuest) => 
+    { this.setState({ guests: [...this.state.guests, {...newGuest}]})  }
+
     render(){
 
     const guestList = this.state.guests.map( guest => {
@@ -22,7 +26,11 @@ export default class GuestContainter extends React.Component{
 
         return(
             <>
-            <h1>Risk App</h1>
+            <header className='header'>
+                <h1>Risk App</h1>
+            </header>
+
+                <NewGuestForm addGuest={this.addGuest} />
             <div className='guest-container'>
                 
                 {guestList}

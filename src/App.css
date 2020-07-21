@@ -1,22 +1,36 @@
-h1{
+.header{
     display: flex;
-    justify-content: center;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+    padding: 5em;
+    background-image: url('https://i0.wp.com/www.shadolsonshow.com/wp-content/uploads/2019/08/EPSTEIN-TEMPLE-2.png?fit=840%2C407');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.new-guest-form{
+  padding: 5px;
+}
+input{
+  margin: 6px;
 }
 
 .guest-container{
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
 
     
 }
 
 .guest-card{
-    margin: ;
+    margin: 2em;
     text-align: center;
     list-style-type: none;
     flex-direction: center;
     height: 500px;
-    width: 420px;
+    width: 20em;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
@@ -28,6 +42,6 @@ ul {
 
 img {
     padding: 10px;
-    width: 350px;
-    height: 300px;
+    width: 300px;
+    height: 256px;
 }
